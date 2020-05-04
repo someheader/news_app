@@ -5,7 +5,8 @@
         {% for question in latest_question_list %}
             <div class="card mb-3">
                 <div class="card-body">
-                    <p class="lead">{{ question.question_text }}</p>
+                    <p class="lead mb-0">{{ question.question_text }}</p>
+                    <footer class="blockquote-footer mb-3">{{ question.pub_date }}</footer>
                     <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary
                     btn-sm">Vote Now</a>
                     <a href="{% url 'polls:results' question.id %}" class="btn btn-secondary

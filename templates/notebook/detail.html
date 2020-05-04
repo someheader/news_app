@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mb-1 text-center">{{ contact.contact_name }}</h1>
+<h5 class="mb-5 text-center">{{ contact.register_date }}</h5>
+
+<ul class="list-group mb-5">
+    {{ contacttype.contact_type }}
+</ul>
+<div class="d-flex justify-content-around">
+    <a class="btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
+    <a class="btn btn-dark" href="{% url 'polls:detail' contact.id %}">Vote again?</a>
+</div>
+{% endblock %}

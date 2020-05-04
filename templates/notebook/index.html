@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="text-center mb-3"></h1>
+    {% if contacts_list %}
+        {% for contact in contacts_list %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="lead mb-0">{{ contact.contact_name }}</p>
+                    <footer class="blockquote-footer mb-3">{{ contact.register_date }}</footer>
+                    <a href="{% url 'notebook:detail' contact.id %}" class="btn btn-primary
+                    btn-sm">Details</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No contacts available</p>
+    {% endif %}
+{% endblock %}

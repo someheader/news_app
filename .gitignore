@@ -1,1 +1,2 @@
+#Ignore settings.py file, contains security data
 news_app/settings.py
